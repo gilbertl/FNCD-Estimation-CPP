@@ -1,3 +1,13 @@
+# Results #
+
+## Scene 6 ##
+
+Using the logged GPS and accelerometer values, I calculated the standard deviation using spreadsheet software and configured  MeasuredStdDev_GPSPosXY and MeasuredStdDev_AccelXY accordingly. 
+
+![Scene 6](images/scene6.png)
+
+
+
 # Estimation Project #
 
 Welcome to the estimation project.  In this project, you will be developing the estimation portion of the controller used in the CPP simulator.  By the end of the project, your simulated quad will be flying with your estimator and your custom controller (from the previous project)!
