@@ -31,9 +31,11 @@ Implemented EKF update step for GPS. Adjusted the Z STD noise accordingly
 
 ![SCene 11](images/scene11.png)
 
-## Scene 11 w/ own controller ##
+## Scene 11 with own controller ##
 
 Copied over controller from previous project. Decreased kpPosZ and kpVelZ to pass the scenario.
+
+![Scene 11 with own controller](images/scene11b.png)
 
 
 # Estimation Project #
