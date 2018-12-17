@@ -6,6 +6,12 @@ Using the logged GPS and accelerometer values, I calculated the standard deviati
 
 ![Scene 6](images/scene6.png)
 
+## Scene 7 ##
+
+Constructed a rotation matrix to convert body rates into euler angle rates. Then used that to integrate and estimate the attitude.
+
+![Scene 7](images/scene7.png)
+
 
 
 # Estimation Project #
