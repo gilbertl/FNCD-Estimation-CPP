@@ -8,13 +8,13 @@ Using the logged GPS and accelerometer values, I calculated the standard deviati
 
 ## Scene 7 ##
 
-Constructed a rotation matrix to convert body rates into euler angle rates. Then used that to integrate and estimate the attitude.
+In UpdateFromIMU(), constructed a rotation matrix to convert body rates into euler angle rates. Then used that to integrate and estimate the attitude.
 
 ![Scene 7](images/scene7.png)
 
 ## Scene 9 ##
 
-Constructed g and gPrime matrices to implement the Predict step in EKF. Tweaked standard deivation parameters to ensure it's reasonable.
+In PredictState() and Predict(), Constructed g and gPrime matrices to implement the Predict step in EKF. Tweaked standard deivation parameters to ensure it's reasonable.
 
 ![Scene 9](images/scene9.png)
 
