@@ -278,7 +278,7 @@ void QuadEstimatorEKF::Predict(float dt, V3F accel, V3F gyro)
   accelXf(2) = accel.z;
   gPrime.block<3, 1>(3, 6) = RbgPrime * (accelXf * dt);
   
-  ekfCov = gPrime*ekfCov*gPrime.transpose()+Q;
+  ekfCov = gPrime * ekfCov * gPrime.transpose() + Q;
 
   /////////////////////////////// END STUDENT CODE ////////////////////////////
 
@@ -303,6 +303,20 @@ void QuadEstimatorEKF::UpdateFromGPS(V3F pos, V3F vel)
   //  - The GPS measurement covariance is available in member variable R_GPS
   //  - this is a very simple update
   ////////////////////////////// BEGIN STUDENT CODE ///////////////////////////
+  
+  zFromX(0) = ekfState(0);
+  zFromX(1) = ekfState(1);
+  zFromX(2) = ekfState(2);
+  zFromX(3) = ekfState(3);
+  zFromX(4) = ekfState(4);
+  zFromX(5) = ekfState(5);
+  
+  hPrime(0, 0) = 1;
+  hPrime(1, 1) = 1;
+  hPrime(2, 2) = 1;
+  hPrime(3, 3) = 1;
+  hPrime(4, 4) = 1;
+  hPrime(5, 5) = 1;
 
   /////////////////////////////// END STUDENT CODE ////////////////////////////
 
@@ -325,6 +339,15 @@ void QuadEstimatorEKF::UpdateFromMag(float magYaw)
   //  - The magnetomer measurement covariance is available in member variable R_Mag
   ////////////////////////////// BEGIN STUDENT CODE ///////////////////////////
 
+  zFromX(0) = ekfState(6);
+  float err = magYaw - ekfState(6);
+  if (err > F_PI) {
+    zFromX(0) += 2.f * F_PI;
+  } else if (err < -F_PI) {
+    zFromX(0) -= 2.f * F_PI;
+  }
+  
+  hPrime(0, 6) = 1;
 
   /////////////////////////////// END STUDENT CODE ////////////////////////////
 

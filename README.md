@@ -12,6 +12,24 @@ Constructed a rotation matrix to convert body rates into euler angle rates. Then
 
 ![Scene 7](images/scene7.png)
 
+## Scene 9 ##
+
+Constructed g and gPrime matrices to implement the Predict step in EKF. Tweaked standard deivation parameters to ensure it's reasonable.
+
+![Scene 9](images/scene9.png)
+
+
+## Scene 10 ##
+
+Implemented EKF update step for magnetometer. Adjusted yaw STD accordingly.
+
+![Scene 10](images/scene10.png)
+
+## Scene 11 ##
+
+Implemented EKF update step for GPS. Adjusted the Z STD noise accordingly
+
+![SCene 11](images/scene11.png)
 
 
 # Estimation Project #
